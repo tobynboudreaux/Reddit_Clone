@@ -1,0 +1,2 @@
+class HatesController < ApplicationController
+end

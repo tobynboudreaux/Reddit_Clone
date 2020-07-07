@@ -1,0 +1,2 @@
+module BipolarsHelper
+end

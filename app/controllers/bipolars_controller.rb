@@ -1,0 +1,2 @@
+class BipolarsController < ApplicationController
+end
