@@ -7,9 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Group.create(title: "Cats R Life")
 User.create(username: "Yeetboi", password_digest: "password", group_id: 1)
+User.create(username: "Yeetgirl", password_digest: "password2", group_id: 1)
 Topic.create(title: "Cat Pics or GTFO", description: "Plz moar cats or die.")
 Post.create(title: "Yeet", content: "This is a post.", img_url: "www.images-of-dogs.com", user_id: 1, topic_id: 1)
 Like.create(user_id: 1, post_id: 1)
+
 
 u = User.first
 t = Topic.first
