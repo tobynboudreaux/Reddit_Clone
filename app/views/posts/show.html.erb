@@ -1,5 +1,9 @@
 <h1> <%= @post.title %> </h1>
+<br>
+<h3> <%= link_to @post.user.username, user_path(@post.user) %> </h3>
 <br><br>
 <h3> <%= @post.content %> </h3>
 <br><br>
 <img src="<%=@post.img_url%>">
+<br><br>
+<%= link_to "All Posts", posts_path %>

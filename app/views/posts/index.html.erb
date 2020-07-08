@@ -3,6 +3,6 @@
 
 <h3>
 <% @posts.each do |post| %>
-   <li> <%= post.title %>: <br> <%= post.content %> </li>
+   <li> <%= link_to post.title, post_path(post) %>: <br> <%= post.content %> </li>
 <% end %> 
 </h3>

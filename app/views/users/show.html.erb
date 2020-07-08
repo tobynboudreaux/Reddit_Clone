@@ -3,5 +3,5 @@
 <h3> <%= @user.username %>'s Posts </h3>
 <br>
 <h5> <% @user.posts.each do |post| %>
-    <li> <%= post.title %> </li>
+    <li> <%= link_to post.title, post_path(post) %> </li>
 <% end %> </h5>
