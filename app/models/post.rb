@@ -15,4 +15,20 @@ class Post < ApplicationRecord
             self.content.split.size > 15
     end
 
+    def self.most_popular
+        self.all.sort {|a, b| b.likes.count <=> a.likes.count}
+    end
+
+    def self.filter_new
+        self.all.sort {|a| a.created_at}
+    end
+
+    def has_pics?
+        if self.img_url.empty?
+            false
+        else
+            true
+        end
+    end
+
 end
