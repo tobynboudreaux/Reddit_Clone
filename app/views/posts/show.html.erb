@@ -7,3 +7,6 @@
 <img src="<%=@post.img_url%>">
 <br><br>
 <%= link_to "All Posts", posts_path %>
+<% if @post.tl_dr == true %>
+    <%= link_to "TL:DR", post_tldr_path(@post) %>
+<% end %>

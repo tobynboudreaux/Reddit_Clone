@@ -8,4 +8,8 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
     end
 
+    def tldr
+        @post = Post.find(params[:post_id])
+    end
+
 end

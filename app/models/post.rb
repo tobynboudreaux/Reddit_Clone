@@ -11,4 +11,8 @@ class Post < ApplicationRecord
         end
     end
 
+    def tl_dr
+            self.content.split.size > 15
+    end
+
 end
