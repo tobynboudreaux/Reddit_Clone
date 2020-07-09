@@ -6,3 +6,5 @@
 <h4> <% @user.posts.each do |post| %>
     <li> <%= link_to post.title, post_path(post) %> </li> <br>
 <% end %> </h4>
+
+<%= button_to 'Follow', user_follows_path(@user), method: :post %>
