@@ -1,1 +1,10 @@
-<%= @topic.title %>
+<h1> <%= @topic.title %> </h1>
+<br><br>
+<h3> <ul>
+<% @topic.posts.each do |post| %>
+    <li> <%= link_to post.title, post_path(post) %>: <br> <%= post.content %> </li>
+    <br><br>
+<%end%>
+</ul> </h3>
+<br><br>
+<%= link_to "Home Page", root_path %>

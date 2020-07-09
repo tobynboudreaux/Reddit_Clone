@@ -4,6 +4,9 @@ class Post < ApplicationRecord
     belongs_to :user 
     belongs_to :topic
 
+    validates :title, presence: true
+    validates :content, presence: true
+
     def self.top_post
         max_num = 0
         self.all.find do |post|
@@ -16,11 +19,13 @@ class Post < ApplicationRecord
     end
 
     def self.most_popular
-        self.all.sort {|a, b| b.likes.count <=> a.likes.count}
+        post = self.all.sort {|a, b| b.likes.count <=> a.likes.count}
+        post.take(3)
     end
 
     def self.filter_new
-        self.all.sort {|a| a.created_at}
+        post = self.all.sort {|a| a.created_at}
+        post.take(3)
     end
 
     def has_pics?
@@ -29,6 +34,10 @@ class Post < ApplicationRecord
         else
             true
         end
+    end
+
+    def like
+       self.likes.create(user_id: 1, post_id: self.id)
     end
 
 end

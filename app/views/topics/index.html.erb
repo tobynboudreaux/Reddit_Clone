@@ -1,3 +1,6 @@
-<% @topics.each do |topic| %>
-    <%= link_to topic.title, topic_path(topic) %>
+<ol> <h1> Ordered by most popular: <br><br>
+<% Topic.ordered.each do |topic| %>
+    <li> <%= link_to topic.title, topic_path(topic) %> </li>
+    <br><br>
 <% end %>
+</h1> </ol>

@@ -2,10 +2,6 @@
 <br>
 <img src="https://www.pinclipart.com/picdir/big/569-5695604_reddit-logo-clipart.png" width="200" height="250" alt="Bootleg Reddit">
 <br><br>
-<h3> <label> Top Group:  <%= link_to Group.top_group.title, group_path(Group.top_group) %> </label> </h3>
-<br>
-<label> Group Users:  <%= Group.top_group.users.count %> </label>
-<br><br><br>
 <h3> <label> Top Post:  <%= link_to Post.top_post.title, post_path(Post.top_post) %> </label> </h3>
 <br>
 <label> Post Likes:  <%= Post.top_post.likes.count %> </label>
@@ -18,10 +14,39 @@
 <br>
 <label> Topic Posts:  <%= Topic.top_topic.posts.count %> </label>
 <br><br>
+<h3> <label> Trending Topics: 
+<br><br>
+<ol>
+<% Topic.trending.each do |topic| %>
+    <li> |<%= link_to topic.title, topic_path(topic) %>| </li> 
+<%end%>
+</ol> </label> </h3> 
+<h3> <label> Most Popular Posts: 
+<br><br>
+<ol>
+<% Post.most_popular.each do |post| %>
+    <li> |<%= link_to post.title, post_path(post) %>| </li> 
+<%end%>
+</ol> </label> </h3>
+<h3> <label> New Posts: 
+<br><br>
+<ol>
+<% Post.filter_new.each do |post| %>
+    <li> |<%= link_to post.title, post_path(post) %>| </li> 
+<%end%>
+</ol> </label> </h3>
+<h3> <label> Posts with Pictures: 
+<br><br>
+<ol>
+<% Post.all.each do |post| %>
+    <% if post.has_pics? then %>
+    <li> |<%= link_to post.title, post_path(post) %>| </li> 
+    <%end%>
+<%end%>
+</ol> </label> </h3>
+<br><br>
 <br><br>
 <%= link_to "All Topics", topics_path %>
-<%= link_to "All Groups", groups_path %>
-
 
 
 

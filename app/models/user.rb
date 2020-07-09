@@ -4,13 +4,12 @@ class User < ApplicationRecord
     has_many :likes
     has_many :posts
     has_many :topics, through: :posts
-    belongs_to :group
 
-    has_many :leaders, foreign_key: :leader_id, class_name: "Lead"
-    has_many :leadees, through: :leaders
+    has_many :followed_users, foreign_key: :follower_id, class_name: 'Follow'
+    has_many :followees, through: :followed_users
 
-    has_many :leadees, foreign_key: :leadee_id, class_name: "Lead"
-    has_many :leaders, through: :leadees
+    has_many :following_users, foreign_key: :followee_id, class_name: 'Follow'
+    has_many :followers, through: :following_users
 
     def self.top_contributer
         max_num = 0

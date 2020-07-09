@@ -15,4 +15,8 @@ class Topic < ApplicationRecord
         yeet.take(3)
     end
 
+    def self.ordered
+        yeet = self.all.sort {|a, b| b.posts.count <=> a.posts.count}
+    end
+
 end

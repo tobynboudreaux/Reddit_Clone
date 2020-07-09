@@ -10,17 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_08_210950) do
+ActiveRecord::Schema.define(version: 2020_07_09_174136) do
 
-  create_table "groups", force: :cascade do |t|
-    t.string "title"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "leads", force: :cascade do |t|
-    t.integer "leader_id"
-    t.integer "leadee_id"
+  create_table "follows", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followee_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -52,7 +46,6 @@ ActiveRecord::Schema.define(version: 2020_07_08_210950) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.integer "group_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
