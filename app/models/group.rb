@@ -12,4 +12,9 @@ class Group < ApplicationRecord
         end
     end
 
+    def self.trending
+        yeet = self.all.sort {|a, b| b.users.count <=> a.users.count}
+        yeet.take(3)
+    end
+
 end

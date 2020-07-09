@@ -9,5 +9,10 @@ class Topic < ApplicationRecord
             max_num = topic.posts.count if topic.posts.count > max_num
         end
     end
-    
+
+    def self.trending
+        yeet = self.all.sort {|a, b| b.posts.count <=> a.posts.count}
+        yeet.take(3)
+    end
+
 end
