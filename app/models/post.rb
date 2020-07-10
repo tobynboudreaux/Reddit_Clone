@@ -8,10 +8,8 @@ class Post < ApplicationRecord
     validates :content, presence: true
 
     def self.top_post
-        max_num = 0
-        self.all.find do |post|
-            max_num = post.likes.count if post.likes.count > max_num
-        end
+        post = self.all.sort {|a, b| b.likes.count <=> a.likes.count}
+        post.take(1)
     end
 
     def tl_dr
@@ -36,8 +34,5 @@ class Post < ApplicationRecord
         end
     end
 
-    def like
-       self.likes.create(user_id: 1, post_id: self.id)
-    end
 
 end

@@ -37,4 +37,4 @@ Post.create(title: "beggar-yeet", content: "Beggars be everywhere. Choosing to b
 Post.create(title: "meme-haha", content: "This is a post.", img_url: "", user_id: 1, topic_id: 3)
 Post.create(title: "cat-haha", content: "This is a post.", img_url: "", user_id: 1, topic_id: 4)
 Post.create(title: "beggar-haha", content: "Laugh with me! Beggars are soon to be!", img_url: "https://i.ytimg.com/vi/lfDTstkXDik/maxresdefault.jpg", user_id: 1, topic_id: 6)
-
+Post.create(title: "test_TL:DR", content: "This post is over 15 words and serves no other purpose but to be tested by the developers. I am literally just here for one method.", img_url: "https://thejournal.com/-/media/EDU/THEJournal/Images/2015/02/20150224test644.jpg", user_id: 15, topic_id: 7)
