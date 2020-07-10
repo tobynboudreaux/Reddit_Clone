@@ -8,8 +8,8 @@ class Post < ApplicationRecord
     validates :content, presence: true
 
     def self.top_post
-        n = self.all.sort {|a, b| b.likes.count <=> a.likes.count}
-        n.take(1)
+        post = self.all.sort {|a, b| b.likes.count <=> a.likes.count}
+        post.take(1)
     end
 
     def tl_dr
@@ -34,8 +34,5 @@ class Post < ApplicationRecord
         end
     end
 
-    def like
-       self.likes.create(user_id: 1, post_id: self.id)
-    end
 
 end

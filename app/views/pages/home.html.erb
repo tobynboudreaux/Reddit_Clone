@@ -1,5 +1,5 @@
 <head>
-<%= stylesheet_link_tag "styles" %>
+
 </head>
 <div class="title_page">
     <h1>Underground Reddit</h1>
@@ -13,8 +13,8 @@
 <h3> <label> Top Post:  <% if Post.top_post == nil %>
                             <%= "There is no top Post atm T_T" %>
                         <% else %>
-                            <%= link_to Post.top_post.title, post_path(Post.top_post) %> </label> </h3>
-                            <label> Post Likes:  <%= Post.top_post.likes.count %> </label>
+                            <%= link_to Post.top_post[0][:title], post_path(Post.top_post) %> </label> </h3>
+                            <label> Post Likes:  <%= Post.top_post[0].likes.count %> </label>
                         <% end %>
 <br><br><br>
 <h3> <label> Top Contributer:  <%= link_to User.top_contributer.username, user_path(User.top_contributer) %> </label> </h3>
