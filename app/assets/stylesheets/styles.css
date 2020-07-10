@@ -1,15 +1,27 @@
 body {
     background-color: black;
   }
-  h1 {
+h1 {
       color: Green;
   }
-  .title_page{
+.title_page{
       position: absolute;
       width: 100%;
       font-size: 20px;
       text-align: center;
   }
-  h3 {
+h3 {
       color: green;
   }
+label {
+    color: green;
+}
+a:link {
+    color: rgba(255, 0, 0, 0.534);
+}
+a:visited {
+    color:rgb(6, 252, 6);
+}
+a:hover {
+    color: rgba(255, 255, 0, 0.288);
+}
